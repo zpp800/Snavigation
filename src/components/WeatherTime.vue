@@ -102,7 +102,7 @@ const getWeatherData = () => {
         weatherCity.value = res.result.city;
         lastWeatherData = {
           data: res.result.condition,
-          data: res.result.city,
+          data1: res.result.city,
           lastFetchTime: currentTime,
         };
         // 将新的天气数据和时间戳存储到 localStorage 中
