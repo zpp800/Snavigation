@@ -47,8 +47,8 @@
       <span class="weekday">{{ timeData.weekday ?? "星期八" }}</span>
     </div>
     <div v-if="weatherShow && set.showWeather" class="weather">
-      <span class="status">{{ weatherData.city.name ?? "N/A" }}</span>
-      <span class="status">{{ weatherData.condition.condition ?? "N/A" }}</span>
+      <span class="status">{{ weatherCity.name ?? "N/A" }}</span>
+      <span class="status">{{ weatherData.condition ?? "N/A" }}</span>
       <span class="temperature">{{ weatherData.temp ?? "N/A" }} ℃</span>
       <span class="wind">{{ weatherData.windDir ?? "N/A" }}</span>
       <span v-if="weatherData.windLevel" class="wind-level">
@@ -75,6 +75,7 @@ const timeInterval = ref(null);
 // 天气数据
 const weatherShow = ref(true);
 const weatherData = ref({});
+const weatherCity = ref({});
 
 // 更新时间
 const updateTimeData = () => {
@@ -97,9 +98,11 @@ const getWeatherData = () => {
     getWeather()
       .then((res) => {
         console.log(res);
-        weatherData.value = res.result;
+        weatherData.value = res.result.condition;
+        weatherCity.value = res.result.city;
         lastWeatherData = {
-          data: res.result,
+          data: res.result.condition,
+          data: res.result.city,
           lastFetchTime: currentTime,
         };
         // 将新的天气数据和时间戳存储到 localStorage 中
