@@ -47,9 +47,11 @@
       <span class="weekday">{{ timeData.weekday ?? "星期八" }}</span>
     </div>
     <div v-if="weatherShow && set.showWeather" class="weather">
+      <span class="status">{{ weatherData.name ?? "N/A" }}</span>
       <span class="status">{{ weatherData.condition ?? "N/A" }}</span>
       <span class="temperature">{{ weatherData.temp ?? "N/A" }} ℃</span>
       <span class="wind">{{ weatherData.windDir ?? "N/A" }}</span>
+      <span class="status">{{ weatherData.tips ?? "N/A" }}</span>
       <span v-if="weatherData.windLevel" class="wind-level">
         {{ weatherData.windLevel }} 级
       </span>
