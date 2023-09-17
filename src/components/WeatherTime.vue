@@ -121,7 +121,7 @@ const getWeatherData = () => {
   } else {
     console.log("从缓存中读取天气数据");
     weatherData.value = lastWeatherData.data;
-    weatherCity.value = lastWeatherData.data;
+    weatherCity.value = lastWeatherData.data1;
   }
 };
 
