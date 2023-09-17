@@ -47,7 +47,7 @@
       <span class="weekday">{{ timeData.weekday ?? "星期八" }}</span>
     </div>
     <div v-if="weatherShow && set.showWeather" class="weather">
-      <span class="status">{{ weatherCity.name ?? "N/A" }}</span>
+      <span class="status">{{ weatherCity.name ?? "N/A" }}</span>&nbsp&nbsp
       <span class="status">{{ weatherData.condition ?? "N/A" }}</span>
       <span class="temperature">{{ weatherData.temp ?? "N/A" }} ℃</span>
       <span class="wind">{{ weatherData.windDir ?? "N/A" }}</span>
