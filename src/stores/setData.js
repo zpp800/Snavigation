@@ -18,19 +18,19 @@ const useSetDataStore = defineStore("setData", {
       lastSearchEngine: "bing",
       customEngineUrl: "",
       // 搜索框收起
-      smallInput: false,
+      smallInput: true,
       // 清空搜索框
       showCleanInput: true,
       // 搜索框自动 focus
-      autoFocus: false,
+      autoFocus: true,
       // 搜索后搜索框自动失焦
       autoInputBlur: true,
       // 时间样式
       timeStyle: "one",
       // 显示农历
-      showLunar: false,
+      showLunar: true,
       // 是否显秒
-      showSeconds: false,
+      showSeconds: true,
       // 是否显零
       showZeroTime: true,
       // 12 小时制
